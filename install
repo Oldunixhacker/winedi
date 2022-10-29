@@ -12,10 +12,11 @@ sudo apt-get install wine -y
 sudo wget -O /bin/winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi || error
 sudo wget -O /bin/template-winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/template-winedi || error
 sudo wget -O /bin/winedi-uninstall https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-uninstall || error
+sudo wget -O /usr/share/winedi-install.desktop https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-install.desktop || error
 sudo chmod +x /bin/winedi || error
 sudo chmod +x /bin/winedi-uninstall || error
 sudo chmod +x /bin/template-winedi || error
 echo -e "\e[32mWinedi has been installed!\e[0m"
 echo "Setting up file defaults."
-echo "application/vnd.microsoft.portable-executable=/bin/winedi" | sudo tee -i -a -p exit /usr/share/applications/defaults.list
+echo "application/vnd.microsoft.portable-executable=winedi-install.desktop" | sudo tee -i -a -p exit /usr/share/applications/defaults.list
 echo "Try opening an EXE file."
