@@ -1,0 +1,19 @@
+# Start of desktop icon metadata
+echo "[Desktop Entry]"
+# Try getting a program name from the file name
+IN="$1"
+arrIN=(${IN//-/ })
+# Categorize into WINE's default category
+echo "Category=Wine Apps"
+# Use generated name
+echo "Name=${arrIN[1]^}"
+# We can't get the comment, so we will not use it
+#echo "Comment=[dummy comment]"
+# Extract the icon from the script
+echo "Icon=$HOME/.wineapps/$1-prefix/drive_c/program_thumb.ico"
+echo "Type=Application"
+echo "Exec=/bin/wine $HOME/.wineapps/$1-prefix/drive_c/program.exe"
+echo ""
+echo "[Desktop Action Uninstall]"
+echo "Name=Uninstall WINE App"
+echo "Exec=/bin/winedi-uninstall $1"
