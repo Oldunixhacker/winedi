@@ -7,6 +7,8 @@ function error {
   exit 2
 }
 sudo -v || exit 1
+sudo apt-get install icoutils -y
+sudo apt-get install wine -y
 sudo wget -O /bin/winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi || error
 sudo wget -O /bin/template-winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/template-winedi || error
 sudo wget -O /bin/winedi-uninstall https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-uninstall || error
