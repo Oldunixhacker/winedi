@@ -10,7 +10,7 @@ if zenity --name "winedi" --question --title "Windows Desktop Intergration" --te
   # Setup intergration prefix
   WINEPREFIX="$HOME/.wineapps/$1-prefix" winecfg
   # Extract icon for use in the desktop icon
-  wrestool -x -t 14 $1 $HOME/.wineapps/$1-prefix/drive_c/program_thumb.ico
+  wrestool -x -t 14 $1 > $HOME/.wineapps/$1-prefix/drive_c/program_thumb.ico
   # Install application
   cp $1 "$HOME/.wineapps/$1-prefix/drive_c/program.exe"
   # Create desktop icon
