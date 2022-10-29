@@ -13,7 +13,8 @@ sudo wget -O /bin/winedi https://raw.githubusercontent.com/TylerMS887/winedi/mai
 sudo wget -O /bin/template-winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/template-winedi || error
 sudo wget -O /bin/winedi-uninstall https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-uninstall || error
 sudo chmod +x /bin/winedi || error
-sudo chmod +x /bin/winedi || error
+sudo chmod +x /bin/winedi-uninstall || error
+sudo chmod +x /bin/template-winedi || error
 echo -e "\e[32mWinedi has been installed!\e[0m"
 echo "Setting up file defaults."
 echo "\napplication/x-msdownload=/bin/winedi" | sudo tee -i -a -p exit /usr/share/applications/defaults.list
