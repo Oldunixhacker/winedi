@@ -1,0 +1,14 @@
+#!/bin/bash
+if [[ "$1" = "" ]]
+then
+  echo "Usage: winedi EXE..."
+  exit 1
+fi
+if zenity --name "winedi" --question --title "Windows Desktop Intergration" --text "This app has not yet been intergrated into Linux.\n\nPlease select an option to use this app.\n\nPlease note that you may need to install DLLs to the created prefix (located in $HOME/.wineapps) to use the application. Download Dlls from: https://dll-files.com" --ok-label "Intergrate" --cancel-label "Run"; then
+  WINEPREFIX="$HOME/.wineapps/$1-prefix" winecfg
+  cp $1 "$HOME/.wineapps/$1-prefix/drive_c/program.exe"
+  template-winedi $1
+  WINEPREFIX="$HOME/.wineapps/$1-prefix" wine $HOME/.wineapps/$1-prefix/drive_c/program.exe
+else
+  wine $1
+fi
