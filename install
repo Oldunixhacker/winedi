@@ -17,5 +17,5 @@ sudo chmod +x /bin/winedi-uninstall || error
 sudo chmod +x /bin/template-winedi || error
 echo -e "\e[32mWinedi has been installed!\e[0m"
 echo "Setting up file defaults."
-echo "application/x-msdownload=/bin/winedi" | sudo tee -i -a -p exit /usr/share/applications/defaults.list
+echo "application/vnd.microsoft.portable-executable=/bin/winedi" | sudo tee -i -a -p exit /usr/share/applications/defaults.list
 echo "Try opening an EXE file."
