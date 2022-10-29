@@ -1,0 +1,18 @@
+function error {
+  echo -e "\e[31mERROR: An error has occured during installation.\e[0m"
+  echo -e "\e[31m  > RECOVERY: Rolling back.\e[0m"
+  sudo rm /bin/winedi -v
+  sudo rm /bin/template-winedi -v
+  sudo rm /bin/winedi-uninstall -v
+  exit 2
+}
+sudo -v || exit 1
+sudo wget -O /bin/winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi || error
+sudo wget -O /bin/template-winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/template-winedi || error
+sudo wget -O /bin/winedi-uninstall https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-uninstall || error
+sudo chmod +x /bin/winedi || error
+sudo chmod +x /bin/winedi || error
+echo -e "\e[32mWinedi has been installed!\e[0m"
+echo "Setting up file defaults."
+echo "application/x-msdownload=/bin/winedi" > /usr/share/applications/defaults.list
+echo "Try opening an EXE file."
