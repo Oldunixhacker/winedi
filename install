@@ -16,5 +16,5 @@ sudo chmod +x /bin/winedi || error
 sudo chmod +x /bin/winedi || error
 echo -e "\e[32mWinedi has been installed!\e[0m"
 echo "Setting up file defaults."
-echo "application/x-msdownload=/bin/winedi" | sudo tee /usr/share/applications/defaults.list
+echo "\napplication/x-msdownload=/bin/winedi" | sudo tee -i -a -p exit /usr/share/applications/defaults.list
 echo "Try opening an EXE file."
