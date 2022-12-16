@@ -6,7 +6,7 @@ then
 fi
 if zenity --question --icon-name warning --name "winedi" --title "Uninstall Program" --text "You are about to uninstall a program.\n\nThis cannot be undone. Proceed?"
 then
-  rn $1
+  rm $1
 else
   exit 1
 fi
