@@ -9,4 +9,3 @@ Categories=Utility;
 MimeType=application/x-exe;application/vnd.microsoft.portable-executable
 NoDisplay=true
 StartupNotify=false
-X-AppImage-Integrate=false
