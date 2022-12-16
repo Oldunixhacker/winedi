@@ -1,5 +1,5 @@
 #!/bin/bash
-ID=$RANDOM
+export ID=$RANDOM
 if [[ "$1" = "" ]]
 then
   # Help dialog
@@ -7,7 +7,7 @@ then
   exit 1
 fi
 # Ask for intergration
-if zenity --name "winedi" --question --title "Windows Desktop Intergration" --text "This app has not yet been intergrated into Linux.\n\nPlease select an option to use this app.\n\nPlease note that you may need to install DLLs to the created prefix (located in $HOME/.wineapps) to use the application. Download Dlls from: https://dll-files.com" --ok-label "Intergrate" --cancel-label "Run"; then
+if zenity --name "winedi" --question --title "Windows Desktop Intergration" --text "This app has not yet been intergrated into Linux.\n\nPlease select an option to use this app.\n\nPlease note that you may need to install DLLs to the created prefix (located in $HOME/.wineapps/$ID) to use the application. Download DLLs from: https://dll-files.com" --ok-label "Intergrate" --cancel-label "Run"; then
   # Setup intergration prefix
   WINEPREFIX="$HOME/.wineapps/$ID" powershell
   # Extract icon for use in the desktop icon
