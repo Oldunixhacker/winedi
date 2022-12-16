@@ -9,11 +9,11 @@ fi
 # Ask for intergration
 if zenity --name "winedi" --question --title "Windows Desktop Intergration" --text "This app has not yet been intergrated into Linux.\n\nPlease select an option to use this app.\n\nPlease note that you may need to install DLLs to the created prefix (located in $HOME/.wineapps) to use the application. Download Dlls from: https://dll-files.com" --ok-label "Intergrate" --cancel-label "Run"; then
   # Setup intergration prefix
-  WINEPREFIX="$HOME/.wineapps/$ID" winecfg
+  WINEPREFIX="$HOME/.wineapps/$ID" powershell
   # Extract icon for use in the desktop icon
   wrestool -x -t 14 $1 > $HOME/.wineapps/$ID-prefix/drive_c/program_thumb.ico
   # Install application
-  cp $1 "$HOME/.wineapps/$ID-prefix/drive_c/program.exe"
+  cp $1 "$HOME/.wineapps/$ID/drive_c/program.exe"
   # Create desktop icon
   template-winedi $1 $ID > $HOME/.local/share/applications/winedi-$ID.desktop
 else
