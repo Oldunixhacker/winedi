@@ -18,13 +18,16 @@ else
   echo ""
   bash --posix
 fi
+echo "Downloading WineDI"
 sudo wget -O /bin/winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi || error
 sudo wget -O /bin/template-winedi https://raw.githubusercontent.com/TylerMS887/winedi/main/template-winedi || error
 sudo wget -O /bin/winedi-uninstall https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-uninstall || error
-sudo wget -O /usr/share/winedi-install.desktop https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-install.desktop || error
+sudo wget -O /usr/share/applications/winedi-install.desktop https://raw.githubusercontent.com/TylerMS887/winedi/main/winedi-install.desktop || error
+echo "Enabling execution"
 sudo chmod +x /bin/winedi || error
 sudo chmod +x /bin/winedi-uninstall || error
 sudo chmod +x /bin/template-winedi || error
+sudo chmod +x /usr/share/applications/winedi-install.desktop || error
 echo -e "\e[32mWinedi has been installed!\e[0m"
 echo "Setting up file defaults."
 echo "application/vnd.microsoft.portable-executable=winedi-install.desktop" | sudo tee -i -a /usr/share/applications/defaults.list
