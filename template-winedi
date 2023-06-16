@@ -7,8 +7,7 @@ arrIN=(${IN//-/ })
 echo "Category=Wine Apps"
 # Use generated name
 echo "Name=${arrIN[1]^}"
-# We can't get the comment, so we will not use it
-#echo "Comment=[dummy comment]"
+echo "Comment=Windows applicatio integrated via WineDI"
 # Extract the icon from the script
 echo "Icon=$HOME/.wineapps/$1-prefix/drive_c/program_thumb.ico"
 echo "Type=Application"
